@@ -1,11 +1,9 @@
 
-/* Echoes of Avaldia - Custom Theme */
+/* Avaldia CSS loading test */
 
-/* Parchment background for article content */
-body[data-theme="dark"] article {
-  background: #E6D8C3;
-  color: #4A321D;
-  padding: 2rem;
-  border: 1px solid #B89C5D;
-  border-radius: 6px;
+article {
+  background: #E6D8C3 !important;
+  color: #4A321D !important;
+  padding: 2rem !important;
+  border: 4px solid #B89C5D !important;
 }
