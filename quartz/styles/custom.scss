@@ -127,3 +127,32 @@ body[data-slug="index"] .center::before {
   background-position: center;
   margin-bottom: 1.5rem;
 }
+
+/* =====================================
+   AVALDIA - FIX CENTER COLUMN OVERLAP
+   ===================================== */
+
+/* Keep parchment within the center column */
+.page > #quartz-body .center {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Prevent content from expanding the column */
+.page > #quartz-body .center article {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Homepage banner */
+body[data-slug="index"] .center::before {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 3.2 / 1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
