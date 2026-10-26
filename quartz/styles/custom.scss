@@ -68,3 +68,8 @@ article {
     padding: 1.25rem;
   }
 }
+
+/* Hide automatic folder listing */
+.page-listing {
+  display: none !important;
+}
