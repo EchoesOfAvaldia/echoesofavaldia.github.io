@@ -113,10 +113,17 @@ article {
 .page > #quartz-body .center li {
   color: #4A321D;
 }
-/* Avaldia Living World banner */
-.page-header {
-  background-image: url("/static/avaldia-banner.png");
-  background-size: cover;
+
+/* Echoes of Avaldia - Homepage banner only */
+
+body[data-slug="index"] .center::before {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 3.2 / 1;
+  background-image: url("/static/fanctions-banner.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   background-position: center;
-  min-height: 240px;
+  margin-bottom: 1.5rem;
 }
