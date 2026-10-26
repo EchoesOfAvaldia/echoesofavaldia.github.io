@@ -60,10 +60,15 @@ jobs:
 
       - name: Overlay user site
         run: |
-          # Point Quartz at the site checkout's content via -d so
-          # CreatedModifiedDate discovers the wiki git history (not the engine's).
+          # Preserve the wiki git history for CreatedModifiedDate.
           rm -rf quartz-engine/content
           cp quartz.config.yaml quartz.lock.json quartz-engine/
+
+          # Apply custom Avaldia styles.
+          if [ -f quartz/styles/custom.scss ]; then
+            mkdir -p quartz-engine/quartz/styles
+            cp quartz/styles/custom.scss quartz-engine/quartz/styles/custom.scss
+          fi
 
       - name: Install dependencies
         if: steps.quartz-deps-cache.outputs.cache-hit != 'true'
