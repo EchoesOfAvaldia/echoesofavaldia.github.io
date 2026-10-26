@@ -17,4 +17,4 @@ This Codex preserves the knowledge, histories, and chronicles of a living world.
 
 
 [[Player Wiki/Factions & Organizations/index|⚔️ Factions & Organizations]]
-[[Player Wiki/The World/Atlas/Myths & Lore/Deities & Religions/Index|  Deities]]
+[[Player Wiki/The World/Atlas/Myths & Lore/Deities & Divinities/Index|  Deities]]
