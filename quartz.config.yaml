@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: EchoesOfAvaldia.github.io/echoesofavaldia.github.io
+  baseUrl: EchoesOfAvaldia.github.io
   ignorePatterns:
     - private
     - templates
