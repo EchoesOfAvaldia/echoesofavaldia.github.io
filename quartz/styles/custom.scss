@@ -73,3 +73,43 @@ article {
 .page-listing {
   display: none !important;
 }
+
+/* =====================================
+   AVALDIA - PARCHMENT PAGE LAYOUT
+   ===================================== */
+
+/* Parchment around the main content */
+.page > #quartz-body .center {
+  background: #E6D8C3;
+  color: #4A321D;
+  padding: 2rem;
+  border: 1px solid #B89C5D;
+  border-radius: 4px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove the separate article panel */
+.page > #quartz-body .center article {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Main page title */
+.page > #quartz-body .center .article-title {
+  color: #4A321D;
+  font-family: "Cinzel", serif;
+}
+
+/* Breadcrumbs */
+.page > #quartz-body .center .breadcrumb-container,
+.page > #quartz-body .center .breadcrumb-container a {
+  color: #274A73;
+}
+
+/* All regular text inside the central panel */
+.page > #quartz-body .center p,
+.page > #quartz-body .center li {
+  color: #4A321D;
+}
