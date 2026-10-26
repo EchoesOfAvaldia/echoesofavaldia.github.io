@@ -14,3 +14,7 @@ A world shaped by ancient powers, forgotten civilizations, rising kingdoms, and 
 Across Avaldia, countless stories unfold. Some become legends. Others fade into memory. Yet every deed, every sacrifice, and every triumph leaves an echo that may endure for generations.
 
 This Codex preserves the knowledge, histories, and chronicles of a living world.
+
+
+[[Player Wiki/Factions & Organizations/index|⚔️ Factions & Organizations]]
+[[Player Wiki/The World/Atlas/Myths & Lore/Deities & Religions/Index|  Deities]]
