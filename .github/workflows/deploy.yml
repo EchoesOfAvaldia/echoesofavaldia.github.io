@@ -69,11 +69,19 @@ jobs:
             mkdir -p quartz-engine/quartz/styles
             cp quartz/styles/custom.scss quartz-engine/quartz/styles/custom.scss
           fi
+          
           # Copy custom banner assets
           if [ -d quartz/static ]; then
             mkdir -p quartz-engine/quartz/static
             cp -R quartz/static/. quartz-engine/quartz/static/
           fi
+          
+          # Copy custom images
+          if [ -d quartz/static ]; then
+            mkdir -p quartz-engine/quartz/static
+            cp -R quartz/static/. quartz-engine/quartz/static/
+          fi
+          
       - name: Install dependencies
         if: steps.quartz-deps-cache.outputs.cache-hit != 'true'
         working-directory: quartz-engine
