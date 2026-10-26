@@ -16,30 +16,38 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
+      header: Cinzel
+      body: Libre Baskerville
+      code: IBM Plex Mono
+  theme:
+    fontOrigin: googleFonts
+    cdnCaching: true
+    typography:
+      title: Cinzel Decorative
+      header: Cinzel
+      body: Libre Baskerville
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#E6D8C3"
+        lightgray: "#D1BFA5"
+        gray: "#A18B70"
+        darkgray: "#4F4635"
+        dark: "#4A321D"
+        secondary: "#274A73"
+        tertiary: "#88652F"
+        highlight: "rgba(184, 156, 93, 0.18)"
+        textHighlight: "#D9BB7080"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#192C43"
+        lightgray: "#30465D"
+        gray: "#72849A"
+        darkgray: "#E1D3BE"
+        dark: "#F0E5D3"
+        secondary: "#D3B474"
+        tertiary: "#9EB7CE"
+        highlight: "rgba(184, 156, 93, 0.18)"
+        textHighlight: "#B89C5D66"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
@@ -263,7 +271,7 @@ plugins:
       name: quartz-themes
       repo: github:saberzero1/quartz-themes
       subdir: plugin
-    enabled: true
+    enabled: false
     options:
       theme: rose-pine
       mode: both
