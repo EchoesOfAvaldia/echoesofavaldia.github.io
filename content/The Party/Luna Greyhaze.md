@@ -1,1 +1,1 @@
-lalala
+A moon elf whose destiny is intertwined with powers far beyond her understanding.
