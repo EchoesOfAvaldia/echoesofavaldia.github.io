@@ -164,3 +164,39 @@ body[data-slug="index"] .center::before {
     0 28px 55px rgba(0, 0, 0, 0.22),
     inset 0 0 18px rgba(112, 71, 28, 0.12);
 }
+
+/* AVALDIA - ORNAMENTAL CORNERS */
+
+.page > #quartz-body .center {
+  position: relative;
+}
+
+.page > #quartz-body .center::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  z-index: 1;
+  pointer-events: none;
+
+  background-image:
+    url("/static/corner-top-left.svg"),
+    url("/static/corner-top-right.svg"),
+    url("/static/corner-bottom-left.svg"),
+    url("/static/corner-bottom-right.svg");
+
+  background-position:
+    left top,
+    right top,
+    left bottom,
+    right bottom;
+
+  background-repeat: no-repeat;
+  background-size: 96px 96px;
+}
+
+@media (max-width: 768px) {
+  .page > #quartz-body .center::after {
+    background-size: 56px 56px;
+  }
+}
+
