@@ -156,8 +156,7 @@ body[data-slug="index"] .center::before {
 
   border: 95px solid transparent;
 
-  border-image-source:
-    url("/static/avaldia-frame.png");
+ border-image-source: url("/static/avaldia-frame-cleaned.png");
 
   /* Draw only the frame, not its center */
   border-image-slice: 95;
