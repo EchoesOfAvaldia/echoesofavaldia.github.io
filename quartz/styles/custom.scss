@@ -165,22 +165,13 @@ body[data-slug="index"] .center::before {
     inset 0 0 18px rgba(112, 71, 28, 0.12);
 }
 
-/* AVALDIA - ORIGINAL ORNAMENTAL FRAME */
+/* AVALDIA - TRANSPARENT ORIGINAL INK FRAME */
 
 .page > #quartz-body .center {
   position: relative;
-  border: 2px solid #A98243;
-  outline: none;
-
-  /* Warmer parchment */
-  background-image:
-    linear-gradient(
-      rgba(174, 113, 46, 0.12),
-      rgba(174, 113, 46, 0.12)
-    ),
-    url("/static/patchment.jpeg");
 }
 
+/* Original ornamental artwork without opaque background */
 .page > #quartz-body .center::after {
   content: "";
   display: block;
@@ -189,18 +180,16 @@ body[data-slug="index"] .center::before {
   pointer-events: none;
   z-index: 2;
 
-  /* Original artwork: corners and connecting lines */
-  border: 46px solid transparent;
-  border-image-source:
-    url("/static/avaldia-original-frame.png");
-  border-image-slice: 46;
-  border-image-width: 46px;
+  border: 70px solid transparent;
+  border-image-source: url("/static/avaldia-ink-frame.png");
+  border-image-slice: 70;
+  border-image-width: 70px;
   border-image-repeat: stretch;
 }
 
 @media (max-width: 768px) {
   .page > #quartz-body .center::after {
-    border-width: 32px;
-    border-image-width: 32px;
+    border-width: 44px;
+    border-image-width: 44px;
   }
 }
