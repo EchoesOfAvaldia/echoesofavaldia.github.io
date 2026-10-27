@@ -1,12 +1,9 @@
 ---
 title: Echoes of Avaldia
 ---
-# Echoes of Avaldia
-
 _Every Legend Leaves an Echo._
 
 ---
-
 ## Welcome to Avaldia
 
 A world shaped by ancient powers, forgotten civilizations, rising kingdoms, and the choices of those who dare to change its fate.
