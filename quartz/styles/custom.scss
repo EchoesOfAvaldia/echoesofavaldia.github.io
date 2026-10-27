@@ -144,3 +144,23 @@ body[data-slug="index"] .center::before {
     aspect-ratio: 2 / 1;
   }
 }
+
+/* ==========================================
+   AVALDIA - GOLD FRAME & DEPTH
+   ========================================== */
+
+.page > #quartz-body .center {
+  position: relative;
+
+  /* Double gold frame */
+  border: 2px solid #A98243;
+  outline: 1px solid #D7BB80;
+  outline-offset: -9px;
+
+  /* Depth and lifted parchment effect */
+  box-shadow:
+    0 3px 5px rgba(0, 0, 0, 0.20),
+    0 14px 28px rgba(0, 0, 0, 0.32),
+    0 28px 55px rgba(0, 0, 0, 0.22),
+    inset 0 0 18px rgba(112, 71, 28, 0.12);
+}
