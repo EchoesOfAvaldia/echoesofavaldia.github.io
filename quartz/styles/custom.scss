@@ -205,3 +205,8 @@ body[data-slug="index"] .center::before {
     background-size: 48px 48px;
   }
 }
+
+/* TEMPORARY TEST - Hide ornamental image overlay */
+.page > #quartz-body .center::after {
+  display: none !important;
+}
