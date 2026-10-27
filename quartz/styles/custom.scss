@@ -1,7 +1,7 @@
 
 /* ==========================================
    ECHOES OF AVALDIA
-   Fantasy Codex Theme - Version 2
+   Fantasy Codex Theme - Version 3
    ========================================== */
 
 /* ------------------------------------------
@@ -10,10 +10,12 @@
 
 .page > #quartz-body .center {
   box-sizing: border-box;
+  position: relative;
   min-width: 0;
   width: 100%;
   max-width: 100%;
 
+  /* Parchment */
   background-color: #E6D8C3;
   background-image: url("/static/patchment.jpeg");
   background-repeat: repeat;
@@ -22,9 +24,19 @@
 
   color: #4A321D;
   padding: 2rem;
-  border: 1px solid #B89C5D;
+
+  /* Double gold frame */
+  border: 2px solid #A98243;
   border-radius: 4px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  outline: 1px solid #D7BB80;
+  outline-offset: -9px;
+
+  /* Parchment depth */
+  box-shadow:
+    0 3px 5px rgba(0, 0, 0, 0.20),
+    0 14px 28px rgba(0, 0, 0, 0.32),
+    0 28px 55px rgba(0, 0, 0, 0.22),
+    inset 0 0 18px rgba(112, 71, 28, 0.12);
 }
 
 /* ------------------------------------------
@@ -132,7 +144,29 @@ body[data-slug="index"] .center::before {
 }
 
 /* ------------------------------------------
-   8. RESPONSIVE LAYOUT
+   8. ORNAMENTAL GOLD FRAME
+   ------------------------------------------ */
+
+.page > #quartz-body .center::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  border: 95px solid transparent;
+
+  border-image-source:
+    url("/static/avaldia-frame.png");
+
+  /* Draw only the frame, not its center */
+  border-image-slice: 95;
+  border-image-width: 95px;
+  border-image-repeat: stretch;
+}
+
+/* ------------------------------------------
+   9. RESPONSIVE LAYOUT
    ------------------------------------------ */
 
 @media (max-width: 768px) {
@@ -143,52 +177,7 @@ body[data-slug="index"] .center::before {
   body[data-slug="index"] .center::before {
     aspect-ratio: 2 / 1;
   }
-}
 
-/* ==========================================
-   AVALDIA - GOLD FRAME & DEPTH
-   ========================================== */
-
-.page > #quartz-body .center {
-  position: relative;
-
-  /* Double gold frame */
-  border: 2px solid #A98243;
-  outline: 1px solid #D7BB80;
-  outline-offset: -9px;
-
-  /* Depth and lifted parchment effect */
-  box-shadow:
-    0 3px 5px rgba(0, 0, 0, 0.20),
-    0 14px 28px rgba(0, 0, 0, 0.32),
-    0 28px 55px rgba(0, 0, 0, 0.22),
-    inset 0 0 18px rgba(112, 71, 28, 0.12);
-}
-
-/* AVALDIA - TRANSPARENT ORIGINAL INK FRAME */
-
-.page > #quartz-body .center {
-  position: relative;
-}
-
-/* ECHOES OF AVALDIA — frame extracted from approved screenshot.
-   Replace ALL previous ornamental-frame ::after rules with this ONE rule.
-   Keep the rest of your existing theme and homepage banner unchanged. */
-.page > #quartz-body .center { position: relative; }
-.page > #quartz-body .center::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  border: 95px solid transparent;
-  border-image-source: url("/static/avaldia-frame.png");
-  border-image-slice: 95 fill;
-  border-image-width: 95px;
-  border-image-repeat: stretch;
-}
-/* On smaller screens, reduce ornament scale without changing page content. */
-@media (max-width: 768px) {
   .page > #quartz-body .center::after {
     border-width: 54px;
     border-image-width: 54px;
