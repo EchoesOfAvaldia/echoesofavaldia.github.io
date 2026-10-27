@@ -171,25 +171,26 @@ body[data-slug="index"] .center::before {
   position: relative;
 }
 
-/* Original ornamental artwork without opaque background */
+/* ECHOES OF AVALDIA — frame extracted from approved screenshot.
+   Replace ALL previous ornamental-frame ::after rules with this ONE rule.
+   Keep the rest of your existing theme and homepage banner unchanged. */
+.page > #quartz-body .center { position: relative; }
 .page > #quartz-body .center::after {
   content: "";
-  display: block;
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 2;
-
-border: 46px solid transparent;
-border-image-source: url("/static/avaldia-ink-frame.png");
-border-image-slice: 46;
-border-image-width: 46px;
-border-image-repeat: stretch;
+  border: 95px solid transparent;
+  border-image-source: url("/static/avaldia-frame.png");
+  border-image-slice: 95 fill;
+  border-image-width: 95px;
+  border-image-repeat: stretch;
 }
-
+/* On smaller screens, reduce ornament scale without changing page content. */
 @media (max-width: 768px) {
   .page > #quartz-body .center::after {
-    border-width: 32px;
-    border-image-width: 32px;
+    border-width: 54px;
+    border-image-width: 54px;
   }
 }
