@@ -1,86 +1,25 @@
 
-/* ==================================
+/* ==========================================
    ECHOES OF AVALDIA
-   Fantasy Codex - Version 1
-   ================================== */
+   Fantasy Codex Theme - Version 2
+   ========================================== */
 
-/* Main parchment article */
-article {
-  background: #E6D8C3;
-  color: #4A321D;
-  padding: 2.5rem;
-  border: 1px solid #B89C5D;
-  border-radius: 4px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-}
+/* ------------------------------------------
+   1. MAIN PARCHMENT PANEL
+   ------------------------------------------ */
 
-/* Readable text inside parchment */
-article p,
-article li,
-article strong,
-article em,
-article blockquote {
-  color: #4A321D;
-}
-
-/* Fantasy headings */
-article h1,
-article h2,
-article h3,
-article h4 {
-  color: #274A73;
-  font-family: "Cinzel", serif;
-}
-
-/* Decorative section headings */
-article h2 {
-  border-bottom: 1px solid #B89C5D;
-  padding-bottom: 0.5rem;
-}
-
-/* Links inside articles */
-article a {
-  color: #274A73;
-  text-decoration-color: #B89C5D;
-}
-
-article a:hover {
-  color: #88652F;
-}
-
-/* Quotes and lore excerpts */
-article blockquote {
-  background: rgba(255, 255, 255, 0.35);
-  border-left: 3px solid #B89C5D;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-}
-
-/* Better readability */
-article {
-  line-height: 1.8;
-}
-
-/* Mobile spacing */
-@media (max-width: 768px) {
-  article {
-    padding: 1.25rem;
-  }
-}
-
-/* Hide automatic folder listing */
-.page-listing {
-  display: none !important;
-}
-
-/* =====================================
-   AVALDIA - PARCHMENT PAGE LAYOUT
-   ===================================== */
-
-/* Parchment around the main content */
 .page > #quartz-body .center {
-  background: #E6D8C3;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+
+  background-color: #E6D8C3;
+  background-image: url("/static/patchment.jpeg");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 600px auto;
+
   color: #4A321D;
   padding: 2rem;
   border: 1px solid #B89C5D;
@@ -88,18 +27,48 @@ article {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
-/* Remove the separate article panel */
+/* ------------------------------------------
+   2. ARTICLE CONTENT
+   ------------------------------------------ */
+
 .page > #quartz-body .center article {
+  min-width: 0;
+  max-width: 100%;
   background: transparent;
-  border: 0;
+  border: none;
   box-shadow: none;
   padding: 0;
+  line-height: 1.8;
 }
 
-/* Main page title */
+/* Readable text */
+.page > #quartz-body .center p,
+.page > #quartz-body .center li,
+.page > #quartz-body .center strong,
+.page > #quartz-body .center em {
+  color: #4A321D;
+}
+
+/* ------------------------------------------
+   3. HEADINGS & NAVIGATION
+   ------------------------------------------ */
+
 .page > #quartz-body .center .article-title {
   color: #4A321D;
   font-family: "Cinzel", serif;
+}
+
+.page > #quartz-body .center h1,
+.page > #quartz-body .center h2,
+.page > #quartz-body .center h3,
+.page > #quartz-body .center h4 {
+  color: #274A73;
+  font-family: "Cinzel", serif;
+}
+
+.page > #quartz-body .center h2 {
+  border-bottom: 1px solid #B89C5D;
+  padding-bottom: 0.5rem;
 }
 
 /* Breadcrumbs */
@@ -108,51 +77,70 @@ article {
   color: #274A73;
 }
 
-/* All regular text inside the central panel */
-.page > #quartz-body .center p,
-.page > #quartz-body .center li {
-  color: #4A321D;
+/* ------------------------------------------
+   4. LINKS
+   ------------------------------------------ */
+
+.page > #quartz-body .center a {
+  color: #274A73;
+  text-decoration-color: #B89C5D;
 }
 
-/* Echoes of Avaldia - Homepage banner only */
+.page > #quartz-body .center a:hover {
+  color: #88652F;
+}
+
+/* ------------------------------------------
+   5. QUOTES & LORE
+   ------------------------------------------ */
+
+.page > #quartz-body .center blockquote {
+  color: #4A321D;
+  background: rgba(255, 255, 255, 0.35);
+  border-left: 3px solid #B89C5D;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+/* ------------------------------------------
+   6. HOMEPAGE BANNER
+   ------------------------------------------ */
 
 body[data-slug="index"] .center::before {
   content: "";
   display: block;
+  box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
   aspect-ratio: 3.2 / 1;
+
   background-image: url("/static/fanctions-banner.png");
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: center;
+  background-size: contain;
+
   margin-bottom: 1.5rem;
 }
 
-/* =====================================
-   AVALDIA - FIX CENTER COLUMN OVERLAP
-   ===================================== */
+/* ------------------------------------------
+   7. HIDE AUTOMATIC FOLDER LISTING
+   ------------------------------------------ */
 
-/* Keep parchment within the center column */
-.page > #quartz-body .center {
-  box-sizing: border-box;
-  min-width: 0;
-  width: 100%;
-  max-width: 100%;
+.page-listing {
+  display: none !important;
 }
 
-/* Prevent content from expanding the column */
-.page > #quartz-body .center article {
-  min-width: 0;
-  max-width: 100%;
-}
+/* ------------------------------------------
+   8. RESPONSIVE LAYOUT
+   ------------------------------------------ */
 
-/* Homepage banner */
-body[data-slug="index"] .center::before {
-  box-sizing: border-box;
-  max-width: 100%;
-  width: 100%;
-  aspect-ratio: 3.2 / 1;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+@media (max-width: 768px) {
+  .page > #quartz-body .center {
+    padding: 1.25rem;
+  }
+
+  body[data-slug="index"] .center::before {
+    aspect-ratio: 2 / 1;
+  }
 }
