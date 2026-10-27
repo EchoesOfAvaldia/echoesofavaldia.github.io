@@ -180,16 +180,16 @@ body[data-slug="index"] .center::before {
   pointer-events: none;
   z-index: 2;
 
-  border: 70px solid transparent;
-  border-image-source: url("/static/avaldia-ink-frame.png");
-  border-image-slice: 70;
-  border-image-width: 70px;
-  border-image-repeat: stretch;
+border: 46px solid transparent;
+border-image-source: url("/static/avaldia-ink-frame.png");
+border-image-slice: 46;
+border-image-width: 46px;
+border-image-repeat: stretch;
 }
 
 @media (max-width: 768px) {
   .page > #quartz-body .center::after {
-    border-width: 44px;
-    border-image-width: 44px;
+    border-width: 32px;
+    border-image-width: 32px;
   }
 }
