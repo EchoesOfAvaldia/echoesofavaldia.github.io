@@ -207,6 +207,28 @@ body[data-slug="index"] .center::before {
   border-image-repeat: stretch;
 }
 
+/* ==========================================
+   AVALDIA - FRAME CONTENT FIX
+   ========================================== */
+
+/* Keep the ornamental frame behind the content */
+.page > #quartz-body .center::after {
+  z-index: 0;
+}
+
+/* Place real page content above the frame */
+.page > #quartz-body .center > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure the article itself has no extra panel */
+.page > #quartz-body .center article {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
 /* Decorative line beneath page title */
 .page > #quartz-body .center .article-title::after {
   content: "";
