@@ -165,103 +165,43 @@ body[data-slug="index"] .center::before {
     inset 0 0 18px rgba(112, 71, 28, 0.12);
 }
 
-
-/* ==========================================
-   AVALDIA - REFERENCE FRAME
-   ========================================== */
+/* AVALDIA - CLEAN ORNAMENTAL FRAME */
 
 .page > #quartz-body .center {
   position: relative;
 
-  /* Warmer, darker parchment */
-  background-image:
-    linear-gradient(
-      rgba(174, 113, 46, 0.12),
-      rgba(174, 113, 46, 0.12)
-    ),
-    url("/static/patchment.jpeg");
-
-  /* Frame is now supplied by the artwork */
-  border: 0;
+  /* Preserve parchment and depth */
+  border: 2px solid #A98243;
   outline: none;
-
-  box-shadow:
-    0 3px 5px rgba(0, 0, 0, 0.20),
-    0 14px 28px rgba(0, 0, 0, 0.32),
-    0 28px 55px rgba(0, 0, 0, 0.22);
 }
 
-/* Original ornamental frame */
 .page > #quartz-body .center::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 1;
+  inset: 8px;
+  z-index: 2;
   pointer-events: none;
-  box-sizing: border-box;
 
-  border: 54px solid transparent;
-  border-image-source: url("/static/avaldia-frame.png");
-  border-image-slice: 54;
-  border-image-width: 54px;
-  border-image-repeat: stretch;
-}
+  border: 1px solid rgba(139, 98, 43, 0.75);
 
-/* ==========================================
-   AVALDIA - FRAME CONTENT FIX
-   ========================================== */
+  background-image:
+    url("/static/ornament-top-left.png"),
+    url("/static/ornament-top-right.png"),
+    url("/static/ornament-bottom-left.png"),
+    url("/static/ornament-bottom-right.png");
 
-/* Keep the ornamental frame behind the content */
-.page > #quartz-body .center::after {
-  z-index: 0;
-}
+  background-position:
+    left top,
+    right top,
+    left bottom,
+    right bottom;
 
-/* Place real page content above the frame */
-.page > #quartz-body .center > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Ensure the article itself has no extra panel */
-.page > #quartz-body .center article {
-  background: transparent;
-  box-shadow: none;
-  border: none;
-}
-
-/* Decorative line beneath page title */
-.page > #quartz-body .center .article-title::after {
-  content: "";
-  display: block;
-  height: 22px;
-  margin-top: 8px;
-
-  background:
-    url("/static/title-divider.png")
-    center / 100% 100% no-repeat;
-}
-
-/* Decorative section headings */
-.page > #quartz-body .center h2 {
-  border-bottom: 0;
-}
-
-.page > #quartz-body .center h2::after {
-  content: "";
-  display: block;
-  height: 20px;
-  margin-top: 6px;
-
-  background:
-    url("/static/section-divider.png")
-    left center / min(100%, 552px) 100% no-repeat;
+  background-repeat: no-repeat;
+  background-size: 72px 72px;
 }
 
 @media (max-width: 768px) {
   .page > #quartz-body .center::after {
-    border-width: 36px;
-    border-image-width: 36px;
+    background-size: 48px 48px;
   }
 }
-
-
