@@ -165,43 +165,42 @@ body[data-slug="index"] .center::before {
     inset 0 0 18px rgba(112, 71, 28, 0.12);
 }
 
-/* AVALDIA - VERIFIED TRANSPARENT CORNERS V3 */
+/* AVALDIA - ORIGINAL ORNAMENTAL FRAME */
 
 .page > #quartz-body .center {
   position: relative;
+  border: 2px solid #A98243;
+  outline: none;
+
+  /* Warmer parchment */
+  background-image:
+    linear-gradient(
+      rgba(174, 113, 46, 0.12),
+      rgba(174, 113, 46, 0.12)
+    ),
+    url("/static/patchment.jpeg");
 }
 
 .page > #quartz-body .center::after {
   content: "";
   display: block;
   position: absolute;
-  inset: 8px;
-  box-sizing: border-box;
+  inset: 0;
   pointer-events: none;
   z-index: 2;
 
-  /* Connecting gold lines */
-  border: 1px solid rgba(139, 98, 43, 0.75);
-
-  /* Transparent corner artwork */
-  background-image:
-    url("/static/avaldia-v3-top-left.png"),
-    url("/static/avaldia-v3-top-right.png"),
-    url("/static/avaldia-v3-bottom-left.png"),
-    url("/static/avaldia-v3-bottom-right.png");
-
-  background-position:
-    left top,
-    right top,
-    left bottom,
-    right bottom;
-
-  background-repeat: no-repeat;
-  background-size: 72px 72px;
+  /* Original artwork: corners and connecting lines */
+  border: 46px solid transparent;
+  border-image-source:
+    url("/static/avaldia-original-frame.png");
+  border-image-slice: 46;
+  border-image-width: 46px;
+  border-image-repeat: stretch;
 }
 
 @media (max-width: 768px) {
   .page > #quartz-body .center::after {
-    background-size: 48px 48px;
+    border-width: 32px;
+    border-image-width: 32px;
   }
 }
