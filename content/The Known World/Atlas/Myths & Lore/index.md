@@ -10,4 +10,4 @@ The tales, beliefs, and legends that mortals tell of Avaldia.
 
 ## Sections
 
-- [[Deities & Divinities/index|Deities & Divinities]]
+- [[Player Wiki/The Known World/Atlas/Myths & Lore/Deities & Divinities/index|Deities & Divinities]]

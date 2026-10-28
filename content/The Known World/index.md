@@ -8,5 +8,5 @@ The lands, peoples, and powers that the heroes of Avaldia have come to know.
 
 ## Chapters
 
-- [[Atlas/index|Atlas]]
-- [[NPCs/index|NPCs]]
+- [[Player Wiki/The Known World/Atlas/index|Atlas]]
+- [[Player Wiki/The Known World/NPCs/index|NPCs]]

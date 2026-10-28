@@ -15,4 +15,4 @@ This Codex preserves the knowledge, histories, and chronicles of a living world.
 [[The Known World/index|🗺️ The Known World]]
 [[Campaigns/index|📜 Campaigns]]
 [[Factions & Organizations/index|⚔️ Factions & Organizations]]
-[[Deities & Divinities/index|🏛️ Deities]]
+[[Player Wiki/The Known World/Atlas/Myths & Lore/Deities & Divinities/index|🏛️ Deities]]

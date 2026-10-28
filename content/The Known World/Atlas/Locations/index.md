@@ -7,7 +7,7 @@ title: Locations
 ## Known Locations
 
 - [[Daggerford]]
-- [[Secomber]]
+- [[MAPS/Secomber]]
 - [[Uluvin]]
 
 *More locations will be revealed as the story unfolds.*
