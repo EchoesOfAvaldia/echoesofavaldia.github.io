@@ -1,11 +1,68 @@
-
 /* ==========================================
    ECHOES OF AVALDIA
-   Fantasy Codex Theme - Version 3
+   Fantasy Codex Theme - Version 4
    ========================================== */
 
+
 /* ------------------------------------------
-   1. MAIN PARCHMENT PANEL
+   0. PAGE PALETTE
+   Navy "night" palette around the page,
+   parchment ink palette inside the page.
+   The dark-mode toggle is hidden.
+   ------------------------------------------ */
+
+html:root,
+html:root[saved-theme="light"],
+html:root[saved-theme="dark"] {
+  --light: #192C43;
+  --lightgray: #30465D;
+  --gray: #72849A;
+  --darkgray: #E1D3BE;
+  --dark: #F0E5D3;
+  --secondary: #D3B474;
+  --tertiary: #9EB7CE;
+  --highlight: rgba(184, 156, 93, 0.18);
+  --textHighlight: #B89C5D66;
+}
+
+/* Inside the parchment, switch back to the ink palette */
+.page > #quartz-body .center {
+  --light: #E6D8C3;
+  --lightgray: #D1BFA5;
+  --gray: #A18B70;
+  --darkgray: #4F4635;
+  --dark: #4A321D;
+  --secondary: #274A73;
+  --tertiary: #88652F;
+  --highlight: rgba(184, 156, 93, 0.18);
+  --textHighlight: #D9BB7080;
+}
+
+.darkmode {
+  display: none !important;
+}
+
+
+/* ------------------------------------------
+   1. PAGE BACKGROUND
+   ------------------------------------------ */
+
+html,
+body {
+  background-color: #14263B;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(74, 110, 156, 0.30), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 50% 100%, rgba(4, 10, 20, 0.55), transparent 70%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.68  0 0 0 0 0.85  0 0 0 0.10 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed;
+}
+
+
+/* ------------------------------------------
+   2. PARCHMENT PANEL + ORNAMENTAL FRAME
    ------------------------------------------ */
 
 .page > #quartz-body .center {
@@ -15,7 +72,6 @@
   width: 100%;
   max-width: 100%;
 
-  /* Parchment */
   background-color: #E6D8C3;
   background-image: url("/static/patchment.jpeg");
   background-repeat: repeat;
@@ -23,15 +79,13 @@
   background-size: 600px auto;
 
   color: #4A321D;
-  padding: 2rem;
+  padding: 3.2rem;
 
-  /* Double gold frame */
   border: 2px solid #A98243;
   border-radius: 4px;
   outline: 1px solid #D7BB80;
   outline-offset: -9px;
 
-  /* Parchment depth */
   box-shadow:
     0 3px 5px rgba(0, 0, 0, 0.20),
     0 14px 28px rgba(0, 0, 0, 0.32),
@@ -39,8 +93,23 @@
     inset 0 0 18px rgba(112, 71, 28, 0.12);
 }
 
+.page > #quartz-body .center::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  border: 95px solid transparent;
+  border-image-source: url("/static/avaldia-frame-cleaned.png");
+  border-image-slice: 95;
+  border-image-width: 95px;
+  border-image-repeat: stretch;
+}
+
+
 /* ------------------------------------------
-   2. ARTICLE CONTENT
+   3. ARTICLE TEXT
    ------------------------------------------ */
 
 .page > #quartz-body .center article {
@@ -53,21 +122,11 @@
   line-height: 1.8;
 }
 
-/* Readable text */
 .page > #quartz-body .center p,
 .page > #quartz-body .center li,
 .page > #quartz-body .center strong,
 .page > #quartz-body .center em {
   color: #4A321D;
-}
-
-/* ------------------------------------------
-   3. HEADINGS & NAVIGATION
-   ------------------------------------------ */
-
-.page > #quartz-body .center .article-title {
-  color: #4A321D;
-  font-family: "Cinzel", serif;
 }
 
 .page > #quartz-body .center h1,
@@ -78,19 +137,74 @@
   font-family: "Cinzel", serif;
 }
 
-.page > #quartz-body .center h2 {
-  border-bottom: 1px solid #B89C5D;
-  padding-bottom: 0.5rem;
-}
-
-/* Breadcrumbs */
 .page > #quartz-body .center .breadcrumb-container,
 .page > #quartz-body .center .breadcrumb-container a {
   color: #274A73;
 }
 
+
 /* ------------------------------------------
-   4. LINKS
+   4. TITLE, SECTION AND FOOTER ORNAMENTS
+   ------------------------------------------ */
+
+.page > #quartz-body .center .article-title {
+  color: #4A321D;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  margin: 1.2rem 0 0;
+}
+
+.page > #quartz-body .center .article-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 774 / 22;
+  margin-top: 0.9rem;
+  background: url("/static/title-divider.png") center / 100% 100% no-repeat;
+}
+
+.page > #quartz-body .center article h2 {
+  font-size: 1.7rem;
+  letter-spacing: 0.02em;
+  margin-top: 2.2rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.page > #quartz-body .center article h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 552 / 23;
+  margin-top: 0.2rem;
+  background: url("/static/section-divider.png") left center / 100% 100% no-repeat;
+}
+
+/* Rule inside the text (--- in Markdown) */
+.page > #quartz-body .center article hr {
+  border: none;
+  height: 2px;
+  margin: 1.6rem 0;
+  background: #274A73;
+}
+
+/* Divider at the foot of every page */
+.page > #quartz-body .center > hr {
+  border: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 774 / 22;
+  margin: 2.5rem 0 1rem;
+  background: url("/static/footer-divider.png") center / 100% 100% no-repeat;
+}
+
+
+/* ------------------------------------------
+   5. LINKS AND HOMEPAGE BUTTONS
    ------------------------------------------ */
 
 .page > #quartz-body .center a {
@@ -102,8 +216,50 @@
   color: #88652F;
 }
 
+/* On the homepage, internal links become parchment buttons.
+   Put an emoji in front of the link text for the icon. */
+body[data-slug="index"] .page > #quartz-body .center article a.internal {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.7rem 0;
+  padding: 0.55rem 1.2rem;
+
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: #274A73;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.22), rgba(120, 85, 40, 0.10)),
+    rgba(176, 145, 93, 0.22);
+  border: 1px solid rgba(169, 130, 67, 0.45);
+  border-radius: 8px;
+  box-shadow:
+    0 2px 4px rgba(74, 50, 29, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+body[data-slug="index"] .page > #quartz-body .center article a.internal:hover {
+  color: #88652F;
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 8px rgba(74, 50, 29, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+body[data-slug="index"] .page > #quartz-body .center article p > br {
+  display: none;
+}
+
+
 /* ------------------------------------------
-   5. QUOTES & LORE
+   6. QUOTES & LORE
    ------------------------------------------ */
 
 .page > #quartz-body .center blockquote {
@@ -115,8 +271,9 @@
   font-style: italic;
 }
 
+
 /* ------------------------------------------
-   6. HOMEPAGE BANNER
+   7. HOMEPAGE BANNER
    ------------------------------------------ */
 
 body[data-slug="index"] .center::before {
@@ -135,34 +292,17 @@ body[data-slug="index"] .center::before {
   margin-bottom: 1.5rem;
 }
 
+
 /* ------------------------------------------
-   7. HIDE AUTOMATIC FOLDER LISTING
+   8. FOLDER LISTINGS
+   Folder pages show only what you write in
+   their index.md.
    ------------------------------------------ */
 
 .page-listing {
   display: none !important;
 }
 
-/* ------------------------------------------
-   8. ORNAMENTAL GOLD FRAME
-   ------------------------------------------ */
-
-.page > #quartz-body .center::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-
-  border: 95px solid transparent;
-
- border-image-source: url("/static/avaldia-frame-cleaned.png");
-
-  /* Draw only the frame, not its center */
-  border-image-slice: 95;
-  border-image-width: 95px;
-  border-image-repeat: stretch;
-}
 
 /* ------------------------------------------
    9. RESPONSIVE LAYOUT
@@ -170,15 +310,19 @@ body[data-slug="index"] .center::before {
 
 @media (max-width: 768px) {
   .page > #quartz-body .center {
-    padding: 1.25rem;
-  }
-
-  body[data-slug="index"] .center::before {
-    aspect-ratio: 2 / 1;
+    padding: 2.2rem 1.5rem;
   }
 
   .page > #quartz-body .center::after {
     border-width: 54px;
     border-image-width: 54px;
+  }
+
+  .page > #quartz-body .center .article-title {
+    font-size: 2rem;
+  }
+
+  body[data-slug="index"] .center::before {
+    aspect-ratio: 2 / 1;
   }
 }
