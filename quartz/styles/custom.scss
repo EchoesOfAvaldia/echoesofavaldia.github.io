@@ -147,8 +147,9 @@ body {
 /* ------------------------------------------
    4. TITLE, SECTION AND FOOTER ORNAMENTS
    ------------------------------------------ */
-
-.page > #quartz-body .center .article-title {
+.page > #quartz-body .center .page-header {
+  margin-top: 0;
+}
   color: #4A321D;
   font-family: "Cinzel", serif;
   font-weight: 700;
@@ -223,7 +224,7 @@ body {
 
 /* On the homepage, internal links become parchment buttons.
    Put an emoji in front of the link text for the icon. */
-body[data-slug="index"] .page > #quartz-body .center article a.internal {
+body[data-slug="index"] .page > #quartz-body .center article a.internal:not([role="anchor"]) {
   display: flex;
   align-items: center;
   width: fit-content;
@@ -250,7 +251,7 @@ body[data-slug="index"] .page > #quartz-body .center article a.internal {
   transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 }
 
-body[data-slug="index"] .page > #quartz-body .center article a.internal:hover {
+body[data-slug="index"] .page > #quartz-body .center article a.internal:not([role="anchor"]):hover {
   color: #88652F;
   transform: translateY(-1px);
   box-shadow:
