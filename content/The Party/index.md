@@ -8,4 +8,4 @@ The heroes whose deeds are written in these pages.
 
 ## Heroes
 
-- [[Luna Greyhaze]]
+- [[Player Wiki/The Party/Luna Greyhaze]]
