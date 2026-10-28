@@ -72,7 +72,8 @@ body {
   width: 100%;
   max-width: 100%;
 
-  background-color: #E6D8C3;
+  background-color: #EFDAB8;
+  background-blend-mode: multiply;
   background-image: url("/static/patchment.jpeg");
   background-repeat: repeat;
   background-position: top left;
@@ -183,7 +184,11 @@ body {
   margin-top: 0.2rem;
   background: url("/static/section-divider.png") left center / 100% 100% no-repeat;
 }
-
+/* The page title above already shows the name, so hide a repeated
+   "# Title" heading at the very top of the page body */
+.page > #quartz-body .center article > h1:first-child {
+  display: none;
+}
 /* Rule inside the text (--- in Markdown) */
 .page > #quartz-body .center article hr {
   border: none;
