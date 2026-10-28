@@ -16,9 +16,16 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      title: Cinzel Decorative
-      header: Cinzel
-      body: Libre Baskerville
+      title:
+        name: Cinzel Decorative
+        weights: [400, 700]
+      header:
+        name: Cinzel
+        weights: [400, 700]
+      body:
+        name: EB Garamond
+        weights: [400, 600]
+        includeItalic: true
       code: IBM Plex Mono
     colors:
       lightMode:
