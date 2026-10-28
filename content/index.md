@@ -12,6 +12,7 @@ Across Avaldia, countless stories unfold. Some become legends. Others fade into 
 
 This Codex preserves the knowledge, histories, and chronicles of a living world.
 
-
-[[Player Wiki/Factions & Organizations/index|⚔️ Factions & Organizations]]
-[[Deities & Divinities|  Deities]]
+[[The Known World/index|🗺️ The Known World]]
+[[Campaigns/index|📜 Campaigns]]
+[[Factions & Organizations/index|⚔️ Factions & Organizations]]
+[[Deities & Divinities/index|🏛️ Deities]]
